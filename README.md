@@ -1,6 +1,6 @@
-# BPY rex
+# BPY plus
 A set of modules to improve and simplify work with Blender Python API.
 
 This is an open-source project that can helps Blender add-on developers in their work.
 
-You can support **BPY rex** on Patreon: <a href="https://www.patreon.com/interplanety">patreon.com/interplanety</a>
+You can support **BPY plus** on Patreon: <a href="https://www.patreon.com/interplanety">patreon.com/interplanety</a>
