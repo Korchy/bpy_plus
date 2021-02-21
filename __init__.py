@@ -2,4 +2,4 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/bpy_rex
+#    https://github.com/Korchy/bpy_plus
