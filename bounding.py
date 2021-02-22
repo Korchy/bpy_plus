@@ -17,7 +17,7 @@ class Bounding:
     def sphere(objects: list, context=bpy.context, mode: str = 'BBOX'):
         """ Return bounding sphere data
 
-        :param objects: List or object of objects to make bounding sphere around
+        :param objects: List of objects or object to make bounding sphere around
         :type objects: list
         :param context: context
         :type context: 'context'

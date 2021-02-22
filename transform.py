@@ -18,9 +18,9 @@ class Transform:
 
         :param factor: Scale factor
         :type factor: float
-        :param axis: XYZ-axis to apply scale
+        :param axis: XYZ-axis to apply the scale. Can be combined.
         :type axis: tuple
-        :param size: size of resulting matrix
+        :param size: the size of the resulting matrix
         :type size: int
         :return: scale matrix
         :rtype: 'Matrix'
