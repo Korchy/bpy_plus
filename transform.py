@@ -13,6 +13,19 @@ class Transform:
     """
 
     @staticmethod
+    def apply(obj):
+        """ Apply all transform for the object
+
+        :param obj: Object
+        :type obj: bpy.types.Object
+
+        """
+        obj_world_matrix = obj.matrix_world.copy()
+        for vert in obj.data.vertices:
+            vert.co = obj_world_matrix @ vert.co
+        obj.matrix_world.identity()
+
+    @staticmethod
     def matrix_scale(factor: float, axis: tuple = (1, 1, 1), size: int = 4) -> 'Matrix':
         """ Return a scale matrix
 
