@@ -15,11 +15,11 @@ See the <a href="https://b3d.interplanety.org/en/bpy-plus-2/">BPY plus web-page<
 
 Current version
 -
-1.0.0.
+1.1.0.
 
 For Blender
 -
-2.91
+2.91, 2.92
 
 Usage
 -
@@ -52,5 +52,4 @@ This method returns the location and radius of the bounding sphere. Let's add an
 
 Version history
 -
-- 1.0.0.
-   - This release.
+[version_history](version_history.md)

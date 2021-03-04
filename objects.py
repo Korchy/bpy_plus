@@ -22,6 +22,7 @@ def deselect_all(context=bpy.context):
     for obj in context.blend_data.objects:
         obj.select_set(False)
 
+
 def set_active(obj, context=bpy.context):
     """ Set object as active
 

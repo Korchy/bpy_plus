@@ -21,3 +21,16 @@ class Mesh:
 
         """
         return sum(len(polygon.vertices) - 2 for polygon in obj.data.polygons)
+
+    @staticmethod
+    def apply_transforms(obj):
+        """ Apply all transformations (Translation, Rotation, Scale) to object
+
+        :param obj: mesh
+        :type obj: bpy.types.Object
+
+        """
+        matrix_world = obj.matrix_world.copy()
+        for vert in obj.data.vertices:
+            vert.co = matrix_world @ vert.co
+        obj.matrix_world.identity()
