@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.2.0
+- Added modules: names
+
 1.1.0
 - Added modules: mesh, objects
 - Added some new methods and functions to existed modules

@@ -17,7 +17,7 @@ class BPYPlus:
 
     """
 
-    _current_version = (1, 1, 0)
+    _current_version = (1, 2, 0)
     _blender_version = ((2, 91), (2, 92), )
 
     @classmethod
