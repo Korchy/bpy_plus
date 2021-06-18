@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.2.1
+- Objects module extended
+
 1.2.0
 - Added modules: names
 

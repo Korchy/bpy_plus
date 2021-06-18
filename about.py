@@ -17,8 +17,8 @@ class BPYPlus:
 
     """
 
-    _current_version = (1, 2, 0)
-    _blender_version = ((2, 91), (2, 92), )
+    _current_version = (1, 2, 1)
+    _blender_version = ((2, 91), (2, 92), (2, 93), (3, 0), )
 
     @classmethod
     def version(cls) -> tuple:

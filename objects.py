@@ -29,3 +29,34 @@ def set_active(obj, context=bpy.context):
     """
     if obj:
         context.view_layer.objects.active = obj
+
+
+def duplicate(obj, data=True, actions=True, collection=None, context=bpy.context):
+    """ Duplicate object
+
+    :param obj: source object
+    :type obj: Object
+    :param data: True - copy object's data, False - linked
+    :type data: bool
+    :param actions: True - copy object's actions, False - linked
+    :type actions: bool
+    :param collection: collection to place object's copy, None - active collection
+    :type collection: Collection
+    :param context: context
+    :type context: context
+    :return: copy of the source object
+    :rtype: Object
+
+    """
+    if obj:
+        obj_copy = obj.copy()
+        if data:
+            obj_copy.data = obj_copy.data.copy()
+        if actions:
+            obj_copy.animation_data.action = obj_copy.animation_data.action.copy()
+        if not collection:
+            collection = context.collection
+        collection.objects.link(obj_copy)
+        return obj_copy
+    else:
+        return None
