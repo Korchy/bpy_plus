@@ -52,7 +52,7 @@ def duplicate(obj, data=True, actions=True, collection=None, context=bpy.context
         obj_copy = obj.copy()
         if data:
             obj_copy.data = obj_copy.data.copy()
-        if actions:
+        if actions and obj_copy.animation_data:
             obj_copy.animation_data.action = obj_copy.animation_data.action.copy()
         if not collection:
             collection = context.collection
