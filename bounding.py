@@ -48,6 +48,9 @@ class Bounding:
             # BBOX - by object bounding boxes - less precis, quick
             for obj in objects:
                 points_co_global.extend([obj.matrix_world @ Vector(bbox) for bbox in obj.bound_box])
+        elif mode == 'ORIGIN':
+            # ORIGIN - by object origins, not precis but maybe useful in some cases
+            points_co_global = [obj.location for obj in objects]
 
         def get_center(l):
             return (max(l) + min(l)) / 2 if l else 0.0
