@@ -47,7 +47,9 @@ class Bounding:
         elif mode == 'BBOX':
             # BBOX - by object bounding boxes - less precis, quick
             for obj in objects:
-                points_co_global.extend([obj.matrix_world @ Vector(bbox) for bbox in obj.bound_box])
+                depsgraph = context.evaluated_depsgraph_get()
+                obj_eval = obj.evaluated_get(depsgraph)
+                points_co_global.extend([obj_eval.matrix_world @ Vector(bbox) for bbox in obj_eval.bound_box])
         elif mode == 'ORIGIN':
             # ORIGIN - by object origins, not precis but maybe useful in some cases
             points_co_global = [obj.location for obj in objects]
