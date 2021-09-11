@@ -1,11 +1,14 @@
 Version history:
 -
 
+1.3.0
+- Added module: render
+
 1.2.1
 - Objects module extended
 
 1.2.0
-- Added modules: names
+- Added module: names
 
 1.1.0
 - Added modules: mesh, objects

@@ -9,7 +9,7 @@ from mathutils import Vector
 
 
 class Bounding:
-    """ Abstract class for bounding objects
+    """ Static class for bounding objects
 
     """
 
