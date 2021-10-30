@@ -36,7 +36,7 @@ class Color:
     def random(alpha=False):
         """ Return random color
 
-        :param alpha: random alpha or 1.1
+        :param alpha: random alpha or 1.0
         :type alpha: bool
 
         """
