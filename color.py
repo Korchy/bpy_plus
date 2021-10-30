@@ -10,15 +10,15 @@ import random
 class Color:
 
     @staticmethod
-    def equal(color_1, color_2, rel_tol=1e-09, abs_tol=0.0001):
+    def equal(color_1, color_2, rel_tol=1e-09, abs_tol=0.0001) -> bool:
         """ Return True if two colors are equal
             if compare color with alpha and without alpha - compare only color
                 (1.0, 1.0, 1.0) is equal (1.0, 1.0, 1.0, 1.0)
 
         :param color_1: Color 1
-        :type color_1: list
+        :type color_1: list, tuple
         :param color_2: Color 2
-        :type color_2: list
+        :type color_2: list, tuple
         :param rel_tol: Relative tolerance
         :type rel_tol: float
         :param abs_tol: Absolute tolerance
@@ -33,11 +33,13 @@ class Color:
         return True
 
     @staticmethod
-    def random(alpha=False):
+    def random(alpha=False) -> tuple:
         """ Return random color
 
         :param alpha: random alpha or 1.0
         :type alpha: bool
+        :return: random color
+        :rtype: tuple
 
         """
         return (
