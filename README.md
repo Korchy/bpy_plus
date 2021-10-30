@@ -15,13 +15,13 @@ See the <a href="https://b3d.interplanety.org/en/bpy-plus-2/">BPY plus web-page<
 
 Current version
 -
-1.3.0.
+1.4.0.
 
 For Blender
 -
 2.91, 2.92, 2.93, 3.0
 
-Usage
+Usage example
 -
 Copy "bpy_plus" to your project directory. Now you can import "bpy_plus" modules as usual and use their functionality.
 

@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.4.0
+- Added module: color
+
 1.3.0
 - Added module: render
 
