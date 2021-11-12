@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.5.0
+- Added module: file_system
+
 1.4.0
 - Added module: color
 
