@@ -6,6 +6,7 @@
 
 import bpy
 import os
+import site
 import sys
 import tempfile
 
@@ -50,6 +51,64 @@ class Path:
 
         """
         return tempfile.gettempdir()
+
+    @staticmethod
+    def blender() -> str:
+        """ Return path to the blender installation directory
+
+        :return: absolute path
+        :rtype: str
+
+        """
+        return os.path.dirname(bpy.app.binary_path)
+
+    @classmethod
+    def blender_v(cls) -> str:
+        """ Return path to the blender version installation directory
+
+        :return: absolute path
+        :rtype: str
+
+        """
+        return os.path.join(cls.blender(), '.'.join(map(str, bpy.app.version[:2])))
+
+    @classmethod
+    def scripts(cls, source='USER') -> str:
+        """ Return path to the 'scripts' directory
+
+        :param source: ['USER', 'SYSTEM'] - from where directory is
+        :type source: str
+        :return: absolute path
+        :rtype: str
+
+        """
+        rez = None
+        if source == 'USER':
+            rez = bpy.utils.user_resource('SCRIPTS')
+        elif source == 'SYSTEM':
+            rez = os.path.join(cls.blender_v(), 'scripts')
+        return rez
+
+    @classmethod
+    def site_packages(cls, source='USER') -> str:
+        """ Return path to the 'site-packages' directory
+
+        :param source: ['USER', 'SYSTEM'] - from where directory is
+        :type source: str
+        :return: absolute path
+        :rtype: str
+
+        """
+        site_packages_dir = None
+        if source == 'USER':
+            site_packages_dir = site.getusersitepackages()
+            if not os.path.exists(site_packages_dir):
+                site_packages_dir = os.path.join(cls.scripts(source=source), 'site-packages')
+                if not os.path.exists(site_packages_dir):
+                    os.makedirs(site_packages_dir)
+        elif source == 'SYSTEM':
+            site_packages_dir = os.path.join(cls.blender_v(), 'python', 'lib', 'site-packages')
+        return site_packages_dir
 
     @classmethod
     def abs(cls, path: str) -> str:
