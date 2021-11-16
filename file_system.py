@@ -21,10 +21,10 @@ class Path:
         :rtype: str
 
         """
-        try:
+        if bpy.app.version[:2] <= (2, 92):
             # 2.92 and older
             path = bpy.app.binary_path_python
-        except AttributeError:
+        else:
             # 2.93 and later
             path = sys.executable
         return os.path.abspath(path)
@@ -107,7 +107,7 @@ class Path:
                 if not os.path.exists(site_packages_dir):
                     os.makedirs(site_packages_dir)
         elif source == 'SYSTEM':
-            site_packages_dir = os.path.join(cls.blender_v(), 'python', 'lib', 'site-packages')
+            site_packages_dir = next((path for path in site.getsitepackages() if 'site-packages' in path), None)
         return site_packages_dir
 
     @classmethod
