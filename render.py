@@ -8,6 +8,7 @@ import bpy
 import functools
 import os
 import re
+from .output import Output
 
 
 class RenderSequence:
@@ -130,7 +131,7 @@ class RenderSequence:
         :type args: *
 
         """
-        output_path = cls.abs_path(path=bpy.context.scene.render.filepath)
+        output_path = Output.path()
         if not os.path.exists(output_path):
             os.makedirs(output_path)
         # save image
@@ -151,21 +152,6 @@ class RenderSequence:
 
         """
         cls.mode = 'CANCEL'
-
-    @staticmethod
-    def abs_path(path: str):
-        """ Returns absolute file path from path
-
-        :param path: path to file
-        :type path: str
-        :return: absolute path to file
-        :rtype: str
-
-        """
-        if path[:2] == '//':
-            return os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(bpy.data.filepath)), path[2:]))
-        else:
-            return os.path.abspath(path)
 
     @classmethod
     def _process_frames(cls, frames):
