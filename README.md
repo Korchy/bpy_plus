@@ -19,7 +19,7 @@ Current version
 
 For Blender
 -
-2.91, 2.92, 2.93, 3.0, 3.1, 3.2
+2.93, 3.0, 3.1, 3.2
 
 Usage example
 -
