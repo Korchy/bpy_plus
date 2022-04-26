@@ -40,7 +40,6 @@ class Collections:
         :rtype: LayerCollection
 
         """
-
         if _layer_collection is None:
             _layer_collection = context.view_layer.layer_collection
         if _layer_collection.name == name:
@@ -51,7 +50,13 @@ class Collections:
                     return rez
 
     @staticmethod
-    def selected():
+    def selected() -> tuple:
+        """ Return selected collections list
+
+        :return: selected collections list
+        :rtype: tuple
+
+        """
 
         class OUTLINER_OT_selected_collections(Operator):
             bl_idname = 'outliner.selected_collections'
@@ -59,8 +64,8 @@ class Collections:
 
             def execute(self, context):
                 selected_ids = context.selected_ids
-                bpy.context.window_manager['selected_collections'] = tuple(sel for sel in selected_ids
-                                                                           if sel.rna_type.name == 'Collection')
+                context.window_manager['selected_collections'] = tuple(sel for sel in selected_ids
+                                                                       if sel.rna_type.name == 'Collection')
                 return {'FINISHED'}
 
         if not hasattr(bpy.types, bpy.ops.outliner.selected_collections.idname()):
