@@ -2,6 +2,8 @@ Version history:
 -
 1.6.0
 - Added module: output
+- Added module: vse
+- Added module: collections
 
 1.5.0
 - Added module: file_system
