@@ -1,5 +1,11 @@
 Version history:
 -
+1.6.1
+- "Collections" module extended with methods:
+  - all()
+  - active()
+  - parent()
+
 1.6.0
 - Added module: output
 - Added module: vse

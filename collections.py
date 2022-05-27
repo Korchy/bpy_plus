@@ -5,12 +5,24 @@
 #    https://github.com/Korchy/bpy_plus
 
 import bpy
-from bpy.types import Context, LayerCollection, Operator
+from bpy.types import Context, Collection, LayerCollection, Operator
 from bpy.utils import register_class
 from .context import Context as Cntx
 
 
 class Collections:
+
+    @staticmethod
+    def active(context: Context = bpy.context) -> Collection:
+        """ Get active collection
+
+        :param context: context
+        :type context: Context
+        :return: Active collection
+        :rtype: Collection
+
+        """
+        return context.collection
 
     @classmethod
     def set_active(cls, name: str, context: Context = bpy.context):
@@ -79,3 +91,35 @@ class Collections:
             return selected_collections
         else:
             return ()
+
+    @staticmethod
+    def all(context: Context = bpy.context) -> list:
+        """ Get all scene collection
+
+        :param context: context
+        :type context: Context
+        :return: Collection list
+        :rtype: list
+
+        """
+        all_collections = context.blend_data.collections[:]
+        all_collections.append(context.scene.collection)
+        return all_collections
+
+    @classmethod
+    def parent(cls, context: Context = bpy.context, collection: Collection = None) -> Collection:
+        """ Get active collection
+
+        :param context: context
+        :type context: Context
+        :param collection: Collection to get parent for
+        :type context: Collection
+        :return: Collection
+        :rtype: Collection
+
+        """
+        collection = collection if collection else cls.active(context=context)
+        all_collections = cls.all(context=context)
+        return next((_collection for _collection in all_collections
+                     if collection.name in _collection.children),
+                    None)
