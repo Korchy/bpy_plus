@@ -22,7 +22,7 @@ def clip(value, _min=0.0, _max=1.0):
     return value
 
 
-def _range(value, min_src=0.0, max_src=1.0, min_dest=0.0, max_dest=1.0):
+def range(value, min_src=0.0, max_src=1.0, min_dest=0.0, max_dest=1.0):
     """
     convert value from one range (0...100) to anther (-1...1)
 
