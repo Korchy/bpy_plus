@@ -15,11 +15,11 @@ See the <a href="https://b3d.interplanety.org/en/bpy-plus-2/">BPY plus web-page<
 
 Current version
 -
-1.6.1.
+1.7.0.
 
 For Blender
 -
-2.93, 3.0, 3.1, 3.2, 3.3
+2.93, 3.0, 3.1, 3.2, 3.3, 3.4
 
 Usage example
 -

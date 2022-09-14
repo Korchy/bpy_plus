@@ -1,6 +1,10 @@
 Version history:
 -
-1.6.1
+
+1.7.0
+- Added module: math
+
+- 1.6.1
 - "Collections" module extended with methods:
   - all()
   - active()
