@@ -1,6 +1,11 @@
 Version history:
 -
 
+1.8.0
+- Added module:
+  - props/matrix_4x4_property
+  - props/quaternion_property
+
 1.7.0
 - Added module: math
 
