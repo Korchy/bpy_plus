@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.8.1
+- Fixed issues
+
 1.8.0
 - Added module:
   - props/matrix_4x4_property
