@@ -60,4 +60,4 @@ class Bounding:
         x, y, z = [[point_co[i] for point_co in points_co_global] for i in range(3)]
         b_sphere_center = Vector([get_center(axis) for axis in [x, y, z]]) if (x and y and z) else None
         b_sphere_radius = max(((point - b_sphere_center) for point in points_co_global)) if b_sphere_center else None
-        return b_sphere_center, b_sphere_radius.length
+        return b_sphere_center, b_sphere_radius.length if b_sphere_radius else None
