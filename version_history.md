@@ -1,6 +1,12 @@
 Version history:
 -
 
+1.8.2
+- The Color module extended with methods:
+  - linear_to_srgb
+  - srgb_to_linear
+  - rgba_to_rgb565
+
 1.8.1
 - Fixed issues
 
@@ -14,9 +20,9 @@ Version history:
 
 1.6.1
 - "Collections" module extended with methods:
-  - all()
-  - active()
-  - parent()
+  - all
+  - active
+  - parent
 
 1.6.0
 - Added module: output
