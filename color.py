@@ -52,7 +52,7 @@ class Color:
     @staticmethod
     def linear_to_srgb(color_value: float) -> int:
         """
-        Convert color value frm Linear color space (Blender native) to sRGB color space (commonly used)
+        Convert color value from Linear color space (Blender native) to sRGB color space (commonly used)
         :param color_value: color value in Linear color space in 0.0 ... 1.0 range
         :return: color value in sRGB color space in 0 - 255 range
         """
@@ -64,7 +64,7 @@ class Color:
     @staticmethod
     def srgb_to_linear(color_value: int) -> float:
         """
-        Convert color value frm sRGB color space (commonly used) to Linear color space (Blender native)
+        Convert color value from sRGB color space (commonly used) to Linear color space (Blender native)
         :param color_value: color value in sRGB color space in 0 - 255 range
         :return: color value in Linear color space in 0.0 - 1.0 range
         """
