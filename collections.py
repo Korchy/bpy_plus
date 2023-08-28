@@ -113,7 +113,7 @@ class Collections:
         :param context: context
         :type context: Context
         :param collection: Collection to get parent for
-        :type context: Collection
+        :type collection: Collection
         :return: Collection
         :rtype: Collection
 
@@ -123,3 +123,20 @@ class Collections:
         return next((_collection for _collection in all_collections
                      if collection.name in _collection.children),
                     None)
+
+    @classmethod
+    def move(cls, collection: Collection, to: Collection) -> None:
+        """ Get active collection
+
+        :param collection: collection to move
+        :type collection: Collection
+        :param to: move to this collection
+        :type to: Collection
+        :return None
+        :rtype None
+
+        """
+        parent = cls.parent(collection=collection)
+        if parent:
+            parent.children.unlink(collection)
+        to.children.link(collection)

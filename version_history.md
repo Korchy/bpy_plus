@@ -1,6 +1,9 @@
 Version history:
 -
 
+1.8.3
+- Added "move" method to the Collections class
+
 1.8.2
 - The Color module extended with methods:
   - linear_to_srgb

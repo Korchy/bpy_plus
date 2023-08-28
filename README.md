@@ -15,7 +15,7 @@ See the <a href="https://b3d.interplanety.org/en/bpy-plus-2/">BPY plus web-page<
 
 Current version
 -
-1.8.2.
+1.8.3.
 
 For Blender
 -
